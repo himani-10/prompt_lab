@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  background: #f7f9fc;
+  color: #111827;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+.label {
+  color: #3b82f6;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 52px;
+  margin: 8px 0;
+  color: #111827;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 30px;
+  margin-top: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 16px;
+  resize: vertical;
+  background: #ffffff;
+  color: #111827;
+}
+
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 18px;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+.score-title {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.progress-bg {
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 999px;
+  height: 16px;
+  margin: 18px 0 28px;
+}
+
+.progress-fill {
+  background: #3b82f6;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.section-title {
+  color: #111827;
+  margin-top: 26px;
+}
+
+ul {
+  line-height: 1.8;
+  padding-left: 24px;
+}
+
+.improved-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 18px;
+  line-height: 1.6;
+  color: #1e3a8a;
+}
+
+.revision-result {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 24px;
+}
+.score-title {
+  color: #111827 !important;
+  font-size: 36px;
+  text-align: left;
+  margin-top: 0;
+}
+
+.card {
+  text-align: left;
+}
+
+.card ul {
+  max-width: 500px;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.card li {
+  text-align: left;
+}
