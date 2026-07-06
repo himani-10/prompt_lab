@@ -72,7 +72,7 @@ function App() {
   const analyzePrompt = async () => {
     console.log("Analyze clicked");
   try {
-    const response = await fetch("http://localhost:3001/analyze", {
+    const response = await fetch("https://prompt-lab-591i.onrender.com/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -113,7 +113,7 @@ if (!response.ok) {
 
   const analyzeRevisedPrompt = async () => {
   try {
-    const response = await fetch("http://localhost:3001/analyze", {
+    const response = await fetch("https://prompt-lab-591i.onrender.com/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
