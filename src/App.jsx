@@ -6,6 +6,8 @@ function App() {
   const [result, setResult] = useState(null);
   const [revisedPrompt, setRevisedPrompt] = useState("");
   const [revisedResult, setRevisedResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [revisionLoading, setRevisionLoading] = useState(false);
 
   function scorePrompt(text) {
     const lower = text.toLowerCase();
@@ -69,26 +71,29 @@ function App() {
     return { scores, total, feedback };
   }
 
-  const analyzePrompt = async () => {
-    console.log("Analyze clicked");
+const analyzePrompt = async () => {
+  if (!prompt.trim()) {
+  alert("Please enter a prompt first.");
+  return;
+}
+  setLoading(true);
+
   try {
-    const response = await fetch("https://prompt-lab-591i.onrender.com/analyze", {
+    const response = await fetch("https://your-backend-url/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        prompt,
-      }),
+      body: JSON.stringify({ prompt }),
     });
 
     const data = await response.json();
-console.log("Backend response:", data);
+    console.log("Backend response:", data);
 
-if (!response.ok) {
-  alert(data.error);
-  return;
-}
+    if (!response.ok) {
+      alert(data.error);
+      return;
+    }
 
     const total =
       data.scores.clarity +
@@ -108,9 +113,10 @@ if (!response.ok) {
   } catch (err) {
     console.error(err);
     alert("Something went wrong connecting to OpenAI.");
+  } finally {
+    setLoading(false);
   }
 };
-
   const analyzeRevisedPrompt = async () => {
   try {
     const response = await fetch("https://prompt-lab-591i.onrender.com/analyze", {
@@ -161,7 +167,9 @@ if (!response.ok) {
           onChange={(e) => setPrompt(e.target.value)}
         />
 
-        <button onClick={analyzePrompt}>Analyze Prompt</button>
+        <button onClick={analyzePrompt} disabled={loading}>
+  {loading ? "Analyzing..." : "Analyze Prompt"}
+      </button>
       </div>
 
       {result && (
