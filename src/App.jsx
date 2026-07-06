@@ -79,7 +79,7 @@ const analyzePrompt = async () => {
   setLoading(true);
 
   try {
-    const response = await fetch("https://your-backend-url/analyze", {
+    const response = await fetch("https://prompt-lab-591i.onrender.com/analyze", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
